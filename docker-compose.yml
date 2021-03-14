@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  maven-docker-app:
+    container_name: SpringBootJPAPostgresSQL
+    image: maven-docker-app-image
+    ports:
+      - "8080:8080"
+    build:
+      context: ""
+      dockerfile: Dockerfile
+    volumes:
+      - /data/maven-docker-app
+networks:
+  default:
+    external:
+      name: tutorial-network

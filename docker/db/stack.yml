@@ -1,0 +1,19 @@
+﻿# Example from https://hub.docker.com/_/postgres/
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+  db:
+    container_name: postgres-db
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Password!1
+      POSTGRES_DB: tutorials
+networks:
+  default:
+    external:
+      name: tutorial-network
